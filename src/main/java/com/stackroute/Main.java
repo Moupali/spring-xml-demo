@@ -18,9 +18,17 @@ public class Main {
     {
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("beans.xml");
         Movie movie1=applicationContext.getBean("movie1",Movie.class);
-        Movie movie2=applicationContext.getBean("movie1",Movie.class);
+        Movie movie2=applicationContext.getBean("movie2",Movie.class);
+        Movie movie3=applicationContext.getBean("movie3",Movie.class);
 
+        //Calling byName-->setter needed
         movie1.acting();
+
+        //Calling ByType-->default constructor needed
+        movie2.acting();
+
+        //Calling By Constuctor-->default and parameterized const both needed
+        movie3.acting();
 
 //        BeanFactory beanFactory=new XmlBeanFactory(new ClassPathResource("beans.xml"));
 //        Movie movie2=beanFactory.getBean("movie1",Movie.class);
