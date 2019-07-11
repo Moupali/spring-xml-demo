@@ -1,5 +1,6 @@
 package com.stackroute;
 
+import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
@@ -16,18 +17,23 @@ public class Main {
     public static void main(String[] args)
     {
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("beans.xml");
-        Movie movie1=applicationContext.getBean("movie",Movie.class);
+        Movie movie1=applicationContext.getBean("movie1",Movie.class);
+        Movie movie2=applicationContext.getBean("movie1",Movie.class);
+
         movie1.acting();
 
-        BeanFactory beanFactory=new XmlBeanFactory(new ClassPathResource("beans.xml"));
-        Movie movie2=beanFactory.getBean("movie",Movie.class);
-        movie2.acting();
+//        BeanFactory beanFactory=new XmlBeanFactory(new ClassPathResource("beans.xml"));
+//        Movie movie2=beanFactory.getBean("movie1",Movie.class);
+//        movie2.acting();
+//
+//        BeanDefinitionRegistry beanDefinitionRegistry=new DefaultListableBeanFactory();
+//        XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(beanDefinitionRegistry);
+//        xmlBeanDefinitionReader.loadBeanDefinitions(new FileSystemResource("/home/moupalidutta/Desktop/SpringExercise/src/main/resources/beans.xml"));
+//        Movie movie3= ((DefaultListableBeanFactory)beanFactory).getBean(Movie.class);
+//        movie3.acting();
 
-        BeanDefinitionRegistry beanDefinitionRegistry=new DefaultListableBeanFactory();
-        XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(beanDefinitionRegistry);
-        xmlBeanDefinitionReader.loadBeanDefinitions(new FileSystemResource("/home/moupalidutta/Desktop/SpringExercise/src/main/resources/beans.xml"));
-        Movie movie3= ((DefaultListableBeanFactory)beanFactory).getBean(Movie.class);
-        movie3.acting();
+//        Movie actor1=applicationContext.getBean("movie1",Movie.class);
+        System.out.println(movie1==movie2);
 
     }
 }
