@@ -30,6 +30,8 @@ public class Main {
       applicationContext.getBean("bean-lifecycledemo");
 
       applicationContext.registerShutdownHook();
+        applicationContext.getBean("beanpostprocessordemobean");
+
 
 
 

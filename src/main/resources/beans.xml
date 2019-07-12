@@ -26,5 +26,8 @@
     <bean id="bean-lifecycledemo" class="com.stackroute.demo.BeanLifecycleDemoBean" init-method="customInit" destroy-method="customDestroy">
     </bean>
 
+    <bean id="beanpostprocessordemobean" class="com.stackroute.demo.BeanPostProcessorDemoBean">
+    </bean>
+
 
 </beans>
