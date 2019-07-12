@@ -20,11 +20,12 @@
 
     </bean>
 
-    <bean name="movie3" class="com.stackroute.domain.Movie" scope="prototype" autowire="constructor">
-
-    </bean>
 
 
 
 
+
+<bean name="movie3" class="com.stackroute.domain.Movie" scope="prototype" autowire="constructor">
+
+</bean>
 </beans>
