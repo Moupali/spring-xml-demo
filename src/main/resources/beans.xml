@@ -23,7 +23,7 @@
 
 
 
-    <bean id="bean-lifecycledemo" class="com.stackroute.demo.BeanLifecycleDemoBean">
+    <bean id="bean-lifecycledemo" class="com.stackroute.demo.BeanLifecycleDemoBean" init-method="customInit" destroy-method="customDestroy">
     </bean>
 
 
