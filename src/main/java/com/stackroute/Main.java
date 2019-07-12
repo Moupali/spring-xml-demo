@@ -1,5 +1,4 @@
 package com.stackroute;
-
 import com.stackroute.domain.Actor;
 import com.stackroute.domain.Movie;
 import java.nio.file.Files;
@@ -27,6 +26,7 @@ public class Main {
       BeanFactory xmlBeanFactory=new XmlBeanFactory(new FileSystemResource("src/main/resources/beans.xml"));
       Movie movieFirst=(Movie)xmlBeanFactory.getBean("movie1");
       movieFirst.setBeanFactory(xmlBeanFactory);
+      applicationContext.getBean("bean-lifecycledemo");
 
 
 

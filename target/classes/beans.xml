@@ -19,13 +19,12 @@
     <bean name="movie2" class="com.stackroute.domain.Movie" scope="prototype" autowire="byType">
 
     </bean>
+    <bean name="movie3" class="com.stackroute.domain.Movie" scope="prototype" autowire="constructor"></bean>
 
 
 
+    <bean id="bean-lifecycledemo" class="com.stackroute.demo.BeanLifecycleDemoBean">
+    </bean>
 
 
-
-<bean name="movie3" class="com.stackroute.domain.Movie" scope="prototype" autowire="constructor">
-
-</bean>
 </beans>
