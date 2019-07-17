@@ -16,12 +16,7 @@ The Main class looks up Movie bean via three ways to print out actor information
 Create a spring-xml-demo repo and push the code to master branch.
 
 
-Task 4:
-From the autowire-xml branch of spring-xml-demo repo create an aware-interface
-branch.
-Implement ApplicationContextAware, BeanFactoryAware, BeanNameAware in the
-Movie class and print out their results.
-Push the code to aware-interface branch.
+
 
 Task 5:
 From the aware-interface branch of spring-xml-demo repo create a bean-lifecycle
