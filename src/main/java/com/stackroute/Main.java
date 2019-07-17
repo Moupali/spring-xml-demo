@@ -13,21 +13,26 @@ import org.springframework.core.io.FileSystemResource;
 import sun.awt.X11.XAbstractMenuItem;
 
 public class Main {
+    //main method
     public static void main(String[] args)
     {
+       //ApplicationContext Object   
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("beans.xml");
-        Movie movie1=applicationContext.getBean("movie",Movie.class);
+        Movie movie1=applicationContext.getBean("movie",Movie.class);      //get beans method
         movie1.acting();
-
+        
+         //BeanFactory Object
         BeanFactory beanFactory=new XmlBeanFactory(new ClassPathResource("beans.xml"));
-        Movie movie2=beanFactory.getBean("movie",Movie.class);
+        Movie movie2=beanFactory.getBean("movie",Movie.class); // get bean obj
         movie2.acting();
 
+        
         BeanDefinitionRegistry beanDefinitionRegistry=new DefaultListableBeanFactory();
         XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(beanDefinitionRegistry);
+        // invoke loadbeandefinnition
         xmlBeanDefinitionReader.loadBeanDefinitions(new FileSystemResource("/home/moupalidutta/Desktop/SpringExercise/src/main/resources/beans.xml"));
-        Movie movie3= ((DefaultListableBeanFactory)beanFactory).getBean(Movie.class);
-        movie3.acting();
+        Movie movie3= ((DefaultListableBeanFactory)beanFactory).getBean(Movie.class); // get bean of DefaultListableBeanFactory
+        movie3.acting();    //acting method invoke
 
     }
 }
